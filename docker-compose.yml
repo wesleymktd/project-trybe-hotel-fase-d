@@ -1,5 +1,15 @@
 version: '3'
 services:
+  backend:
+    container_name: trybe_hotel_backend
+    build: ./src/TrybeHotel
+    ports:
+      - "5001:80"
+    working_dir: /app-backend
+    volumes:
+      - ./src/TrybeHotel:/app-backend
+    depends_on:
+      - db
   db:
     image: mcr.microsoft.com/azure-sql-edge:latest
     container_name: trybe_hotel_db_fase_d
