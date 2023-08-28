@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Diagnostics;
 using System.Xml;
 using System.IO;
+using System.Net.Http.Headers;
 
 public class TokenLogin
 {
