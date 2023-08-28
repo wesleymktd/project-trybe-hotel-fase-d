@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TrybeHotelContext>();
+builder.Services.AddSingleton<TokenGenerator>();
 builder.Services.AddScoped<ITrybeHotelContext, TrybeHotelContext>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
@@ -66,8 +67,18 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Client", policy => policy.RequireClaim(ClaimTypes.Email));
-    options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email).RequireClaim(ClaimTypes.Role, "admin"));
+    options.AddPolicy("Admin", policy => 
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim(ClaimTypes.Email);
+        policy.RequireClaim(ClaimTypes.Role, "admin");
+    });
+
+    options.AddPolicy("Client", policy => 
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim(ClaimTypes.Email);
+    });
 });
 
 var app = builder.Build();
