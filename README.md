@@ -1,13 +1,34 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+## 🧐 Sobre
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<p align="left"> 
+O projeto Trybe Hotel se trata da implementação de uma Api de um site de reserva de uma rede de Hoteis, onde nessa quarta fase foram implementados os seguintes processos:
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+### Desenvolvimento de um sistema de "ping".
+  - O endpoint GET / deve retornar um status de sucesso com o seguinte corpo de resposta
+```json
+{
+    "message": "online"
+}
+```
+### Foi desenvolvido o Dockerfile da aplicação para conteineriza-la visando um futuro deploy.
+
+## ⚒ Testes automatizados <a name = "installing"></a>
+
+```bash
+# Clone o projeto
+$ git clone git@github.com:wesleymktd/project-trybe-hotel-fase-b.git
+# Acesse o diretório TrybeHotel.test
+
+# Execute o comando dotnet test
+# para filtrar por algum teste específico execute o comando
+$ dotnet test --filter `nome_do_teste`
+
+```
+
+## Principais tecnologias utilizadas:
+- C#;
+- ASP.NET
+- EntityFramework
+- Xunit
+- JWT
+- azure sql edge
