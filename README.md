@@ -179,4 +179,4 @@ $ dotnet test --filter `nome_do_teste`
 - EntityFramework
 - Xunit
 - JWT
-- azure sql edge
+- SQL Server
